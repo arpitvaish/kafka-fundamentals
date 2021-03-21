@@ -12,7 +12,7 @@ import java.util.Properties;
 
 public class KafkaConsumerManualOffsetControlUsingCommitSync {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Properties props = new Properties();
         props.setProperty("bootstrap.servers", "localhost:9092");
@@ -21,7 +21,7 @@ public class KafkaConsumerManualOffsetControlUsingCommitSync {
         props.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.setProperty("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
-        consumer.subscribe(Arrays.asList("foo", "bar"));
+        consumer.subscribe(Arrays.asList("my-tpo"));
         final int minBatchSize = 5;
         List<ConsumerRecord<String, String>> buffer = new ArrayList<>();
         while (true) {

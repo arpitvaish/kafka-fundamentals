@@ -4,12 +4,8 @@ import com.LetUsKafka.demo.dao.ProducerDao;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -32,7 +28,7 @@ public class ProducerDaoImpl implements ProducerDao {
         properties.put("retry.backoff.ms", 5);
         Producer<String, String> producer = new KafkaProducer<>(properties);
         for (int i = 0; i < 100; i++)
-        producer.send(new ProducerRecord<String, String>(topic, String.valueOf(i), value+ " "+ i));
+            producer.send(new ProducerRecord<String, String>(topic, String.valueOf(i), value + " " + i));
 
         producer.close();
     }

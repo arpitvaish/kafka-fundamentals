@@ -1,6 +1,5 @@
 package com.LetUsKafka.demo.consumer;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -39,7 +38,7 @@ public class KafkaConsumerByPartitionId1 {
             while (true) {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
                 for (ConsumerRecord<String, String> record : records)
-                    System.out.println(String.format("Partition: %s in Topic: %s  and value : %s", Integer.toString(record.partition()), record.topic(), record.value()));
+                    System.out.println(String.format("Partition: %s in Topic: %s  and value : %s", record.partition(), record.topic(), record.value()));
             }
         } finally {
             consumer.close();
