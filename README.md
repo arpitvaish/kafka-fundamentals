@@ -2,7 +2,7 @@
 # kafka-fundamentals
 
 ##HLD
-![HLD for Kafka Fundamentals](src/main/resources/static/HLD for kafka Fundamentals.jpg?raw=true "Title")
+![HLD for Kafka Fundamentals](src/main/resources/static/HLD-for-Kafka-Fundamentals.jpg?raw=true "Title")
 
 ##CLI commands to start
   ##Windows
