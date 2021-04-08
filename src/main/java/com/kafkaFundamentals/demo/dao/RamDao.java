@@ -1,8 +1,8 @@
-package com.LetUsKafka.demo.dao;
+package com.kafkaFundamentals.demo.dao;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public interface ProducerDao {
+public interface RamDao {
     void producer(String topic, String key, String value) throws IOException;
 }

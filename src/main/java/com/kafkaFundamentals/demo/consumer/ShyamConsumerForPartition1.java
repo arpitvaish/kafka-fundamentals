@@ -1,6 +1,5 @@
-package com.LetUsKafka.demo.consumer;
+package com.kafkaFundamentals.demo.consumer;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -12,8 +11,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
-@Slf4j
-public class KafkaConsumerByPartitionId2 {
+public class ShyamConsumerForPartition1 {
     public static void main(String[] args) {
         Properties props = new Properties();
         props.setProperty("bootstrap.servers", "localhost:9092");
@@ -26,7 +24,7 @@ public class KafkaConsumerByPartitionId2 {
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
 
         List<TopicPartition> partitions = new ArrayList<>();
-        partitions.add(new TopicPartition("my-tpo", 2));
+        partitions.add(new TopicPartition("my-tpo", 1));
 
         consumer.assign(partitions);
 

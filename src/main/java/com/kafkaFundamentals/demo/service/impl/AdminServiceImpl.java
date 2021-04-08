@@ -1,7 +1,7 @@
-package com.LetUsKafka.demo.service.impl;
+package com.kafkaFundamentals.demo.service.impl;
 
-import com.LetUsKafka.demo.dao.AdminDao;
-import com.LetUsKafka.demo.service.AdminService;
+import com.kafkaFundamentals.demo.dao.AdminDao;
+import com.kafkaFundamentals.demo.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

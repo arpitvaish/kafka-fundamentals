@@ -1,6 +1,6 @@
-package com.LetUsKafka.demo.dao.impl;
+package com.kafkaFundamentals.demo.dao.impl;
 
-import com.LetUsKafka.demo.dao.ProducerDao;
+import com.kafkaFundamentals.demo.dao.RamDao;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 @Component
-public class ProducerDaoImpl implements ProducerDao {
+public class RamDaoImpl implements RamDao {
 
     @Override
     public void producer(String topic, String key, String value) throws IOException {
@@ -27,8 +27,16 @@ public class ProducerDaoImpl implements ProducerDao {
         properties.put("max.in.flight.requests.per.connection", 5);
         properties.put("retry.backoff.ms", 5);
         Producer<String, String> producer = new KafkaProducer<>(properties);
-        for (int i = 0; i < 100; i++)
-            producer.send(new ProducerRecord<String, String>(topic, String.valueOf(i), value + " " + i));
+
+        producer.send(new ProducerRecord<String, String>(topic, key, value ));
+
+        /*
+
+            //Produce batch of data
+            for(int i = 0; i<10000; i++){
+             producer.send(new ProducerRecord<String, String>(topic, String.valueOf(i), value ));
+            }
+         */
 
         producer.close();
     }

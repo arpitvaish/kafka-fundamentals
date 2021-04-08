@@ -1,4 +1,4 @@
-package com.LetUsKafka.demo.consumer;
+package com.kafkaFundamentals.demo.consumer;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -10,7 +10,7 @@ import java.util.Properties;
 import java.util.Set;
 
 
-public class KafkaConsumerApp {
+public class ShyamConsumerForChatMessage {
     //Logger
     public static void main(String[] args) {
         Properties props = new Properties();
@@ -21,7 +21,7 @@ public class KafkaConsumerApp {
         props.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.setProperty("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
-        consumer.subscribe(Arrays.asList("my-tpo"));
+        consumer.subscribe(Arrays.asList("chat-topic"));
 
         //Prints the topic subscription list
         Set<String> subscribedTopics = consumer.subscription();

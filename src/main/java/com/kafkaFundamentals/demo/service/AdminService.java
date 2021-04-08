@@ -1,4 +1,4 @@
-package com.LetUsKafka.demo.service;
+package com.kafkaFundamentals.demo.service;
 
 import java.io.IOException;
 import java.util.List;
