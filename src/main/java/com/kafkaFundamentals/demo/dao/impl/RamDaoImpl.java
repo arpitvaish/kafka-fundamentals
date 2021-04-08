@@ -14,6 +14,8 @@ public class RamDaoImpl implements RamDao {
 
     @Override
     public void producer(String topic, String key, String value) throws IOException {
+
+        //Server Properties definition
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "localhost:9092");
         properties.put("acks", "all");
@@ -26,9 +28,12 @@ public class RamDaoImpl implements RamDao {
         properties.put("timeout.ms", 30000);
         properties.put("max.in.flight.requests.per.connection", 5);
         properties.put("retry.backoff.ms", 5);
+
+        //Instantiate Producer Object
         Producer<String, String> producer = new KafkaProducer<>(properties);
 
-        producer.send(new ProducerRecord<String, String>(topic, key, value ));
+        //Send Single message
+        producer.send(new ProducerRecord<String, String>(topic, key, value));
 
         /*
 
@@ -38,6 +43,7 @@ public class RamDaoImpl implements RamDao {
             }
          */
 
+        //Close the producer object
         producer.close();
     }
 

@@ -15,6 +15,7 @@ import java.util.Set;
 @Slf4j
 public class ShyamConsumerForParition2 {
     public static void main(String[] args) {
+        //Consumer Properties
         Properties props = new Properties();
         props.setProperty("bootstrap.servers", "localhost:9092");
         props.setProperty("group.id", "test");
@@ -26,7 +27,7 @@ public class ShyamConsumerForParition2 {
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
 
         List<TopicPartition> partitions = new ArrayList<>();
-        partitions.add(new TopicPartition("my-tpo", 2));
+        partitions.add(new TopicPartition("notification-topic", 2));
 
         consumer.assign(partitions);
 

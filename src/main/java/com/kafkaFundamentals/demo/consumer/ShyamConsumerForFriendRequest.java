@@ -13,6 +13,7 @@ import java.util.Set;
 public class ShyamConsumerForFriendRequest {
     //Logger
     public static void main(String[] args) {
+        //Consumer Properties̥
         Properties props = new Properties();
         props.setProperty("bootstrap.servers", "localhost:9092");
         props.setProperty("group.id", "test");

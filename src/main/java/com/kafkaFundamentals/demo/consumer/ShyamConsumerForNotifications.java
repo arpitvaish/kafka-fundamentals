@@ -13,6 +13,8 @@ import java.util.Set;
 public class ShyamConsumerForNotifications {
     //Logger
     public static void main(String[] args) {
+
+        //Consumer Properties
         Properties props = new Properties();
         props.setProperty("bootstrap.servers", "localhost:9092");
         props.setProperty("group.id", "test");

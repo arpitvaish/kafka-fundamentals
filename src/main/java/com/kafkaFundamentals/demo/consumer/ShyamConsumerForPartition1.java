@@ -13,6 +13,7 @@ import java.util.Set;
 
 public class ShyamConsumerForPartition1 {
     public static void main(String[] args) {
+        //Consumer Properties
         Properties props = new Properties();
         props.setProperty("bootstrap.servers", "localhost:9092");
         props.setProperty("group.id", "test");
@@ -24,7 +25,7 @@ public class ShyamConsumerForPartition1 {
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
 
         List<TopicPartition> partitions = new ArrayList<>();
-        partitions.add(new TopicPartition("my-tpo", 1));
+        partitions.add(new TopicPartition("notification-topic", 1));
 
         consumer.assign(partitions);
 
