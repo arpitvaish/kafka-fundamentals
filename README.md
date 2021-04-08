@@ -1,4 +1,4 @@
-"# kafka-fundamentals" 
+
 # kafka-fundamentals
 
 ##HLD
